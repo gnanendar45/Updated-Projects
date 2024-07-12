@@ -4,28 +4,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class AddcustomerPage {
+public class AddCoustomerPage {
 	
 	public WebDriver ldriver;
-
-	public AddcustomerPage(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
-
-	}
-	By lnkCustomers_menu=By.xpath("//body[1]/div[3]/aside[1]/div[1]/div[4]/div[1]/div[1]/nav[1]/ul[1]/li[4]/a[1]/p[1]");
-	//By lnkCustomers_menu=By.xpath("/html/body/div[3]/aside/div/div[4]/div/div/nav/ul/li[4]/a/p");
-	//@FindBy(xpath="//body[1]/div[3]/aside[1]/div[1]/div[4]/div[1]/div[1]/nav[1]/ul[1]/li[4]/a[1]/p[1]")
-	//private By Customers;
-	//By lnkCustomers_menu=By.xpath("//body[1]/div[3]/aside[1]/div[1]/div[4]/div[1]/div[1]/nav[1]/ul[1]/li[4]/a[1]/p[1]");
-	By lnkCustomers_menuitem=By.xpath("//a[@class='nav-link active']/parent::li/ul/li/a/p");
-	By btnAddnew=By.xpath("//a[@class='btn btn-primary']"); //addnew
 	
-	By txtEmail=By.xpath("//input[@id='Email']");
+	public AddCoustomerPage(WebDriver rdriver) {
+		ldriver=rdriver;
+		PageFactory.initElements(ldriver, this);
+	}
+	
+	By lnkCustomers_menu= By.xpath("/html/body/div[3]/aside/div/div[4]/div/div/nav/ul/li[4]/a/p"); ////a[@href="#"]//span[conatins(text(),'Customers']
+    By lnkCustomers_menuitem= By.xpath("//ul[@class='nav nav-treeview']/parent::li/a/*[contains(text(),'Customers')]");
+    By btnAddnew=By.xpath("//a[@class='btn btn-primary']"); //addnew
+ 
+    By txtEmail=By.xpath("//input[@id='Email']");
 	By txtPassword=By.xpath("//input[@id='Password']");
 	
 	By txtcustomerRoles=By.xpath("//*[@id=\"customer-info\"]/div[2]/div[10]/div[2]/div/div[1]/div/div");
@@ -48,36 +43,24 @@ public class AddcustomerPage {
     By txtAdminComment=By.xpath("//textarea[@id='AdminComment']");
     
     By btnSave=By.xpath("//button[@name='save']");
-    
-    public String getPageTitle() {
-    	return ldriver.getTitle();
-    }
-    
-    
-    public void clickOnCustomersMenu() {
-    	ldriver.findElement(lnkCustomers_menu).click();
-    }
-    
-//    public void clickOnCustomers() {
-//    	ldriver.findElement(Customers).click();
-//    }
 	
-    public void clickOnCustomerMenuItem() {
-    	ldriver.findElement(lnkCustomers_menuitem).click();
-    }
-    
-    public void clickOnAddnew() {
-    	ldriver.findElement(btnAddnew).click();
-    }
-    
-    public void setEmail(String email) {
-    	ldriver.findElement(txtEmail).sendKeys(email);
-    }
-    
-    public void setPassword(String password) {
-    	ldriver.findElement(txtPassword).sendKeys(password);
-    }
-    
+	public void clicksOnCustomersMenu() {
+		ldriver.findElement(lnkCustomers_menu);
+	}
+	public void clicksOnCustomersMenuItem() {
+		ldriver.findElement(lnkCustomers_menuitem);
+	}
+	public void clicksOnAddnew() {
+		ldriver.findElement(btnAddnew);
+	}
+	public void setEmail() {
+		ldriver.findElement(txtEmail);
+	}
+	public void setPassword() {
+		ldriver.findElement(txtPassword);
+	}
+	
+
     public void setCustomerRoles(String role) throws InterruptedException {
     	
     	if(!role.equals("Vendors"))  //if role is vonder should not delete Resgister as per
