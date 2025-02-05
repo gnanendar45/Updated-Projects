@@ -30,7 +30,9 @@ public class SearchAmezon_page extends Library{
 	@FindBy(xpath="//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/span/div/div/div/div[2]/div")
 	WebElement mobilerelated;
 	
-	@FindBy(xpath="//div[@class='puisg-col-inner']")
+	/*
+	 * @FindBy(xpath="//div[@class='puisg-col-inner']") WebElement MultipleGettext;
+	 */
 	
 	public void Search(String Text) {
 		se=new SeleniumReusable(driver);
@@ -49,9 +51,9 @@ public class SearchAmezon_page extends Library{
 		System.out.println((entairresult).isDisplayed());
 		System.out.println(driver.getTitle());
 	}
-	public void Printentireresult() {
-		se.MultipleGettext(mobilerelated);
-	}
+	/*
+	 * public void Printentireresult() { se.MultipleGettext(mobilerelated); }
+	 */
 	
 	
 	

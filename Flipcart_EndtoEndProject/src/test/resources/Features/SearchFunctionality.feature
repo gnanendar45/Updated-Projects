@@ -4,11 +4,11 @@ Feature: To validate the flipkart Application
     Given Launch the Flipkart Application
     When Close the popup
     Then It should Navigate to the Home page
-    
-    @tc001 @Regression
+
+ # @tc001 @Regression
   Scenario: To validate the search functionality
     Given User enter the text in the search field
-    When Click the serah button
+    #When Click the serah button
     Then It should navigate to the search result page and display the relavent details
     # Then Extract the Result and print in console
     #Then Print the third result and keep it in the console
@@ -26,7 +26,7 @@ Feature: To validate the flipkart Application
     And click the price high to low link
     Then Its should display the relevent details and get title
 
-  @tc003 @Regression
+ # @tc003 @Regression
   Scenario Outline: To validate the search functionality with different values
     Given Enter the "<searchtext>" in the search field
     When click the search button
@@ -46,16 +46,16 @@ Feature: To validate the flipkart Application
     And Mouce move to the Home&Furniture link
     And Going to click the wall lamp
     And Scroll down the page and click one particular result
-
     And Enter delivery pincode and click the check link
-   Then Pincode should be checked and displayed and verify the titles
- # @tc005 @Regression
+    Then Pincode should be checked and displayed and verify the titles
+
+   @tc005 @Regression
   Scenario: To get the title and price from search results
     Given Enter the search text in the search field
     When Click the search ickon
     Then It should display the search result and get the title and price
 
- #@tc006
+ # @tc006
   Scenario: To validate the Electronics functionality
     Given User to move to Electronic link
     When Curser to move to the Gaming link
@@ -63,7 +63,7 @@ Feature: To validate the flipkart Application
     And clicks on the price high to low links
     Then Its should display the relevent details and get titles
 
-  @tc007
+  #@tc007
   Scenario: To validate the Two wheelers
     Given User to move to the Two wheelers link
     When Curser move to the Electric Vehicals link click
@@ -73,5 +73,11 @@ Feature: To validate the flipkart Application
     And clicks on the price high to low link
     Then Its should display the relevent details and get title
 
-
- 
+  #@tc008
+  Scenario: User check the electronice functionality
+    Given the user clicks on the "Electronics" category
+    When the user selects a "Mobile & Accessories" from the list
+    And curser move to the "Laptop & Accessories"
+    And the user click on the "Samsung" category
+    And the user clicks on the price high to low link
+    Then the user clicks on the Top Brands under the "Apple" category
