@@ -32,7 +32,7 @@
 //  monochrome = false, 
   plugin =
   {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},tags
-  = "@tc005")
+  = "@tc006")
   
   public class Runner {
   
