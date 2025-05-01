@@ -18,7 +18,7 @@ public class Electronic_page extends Library{
 		
 	}
 	
-	@FindBy(xpath="//span[text()='Electronics']")
+	@FindBy(xpath="//a[text()=' Electronics ']")
 	WebElement electronicslink;
 	
 	@FindBy(xpath="//a[text()='Gaming']")
@@ -33,6 +33,8 @@ public class Electronic_page extends Library{
 	public void moveelectronicslink() throws InterruptedException {
 		se=new SeleniumReusable(driver);
 		se.moucehover(electronicslink);
+		electronicslink.click();
+		
 	}
 	
 	public void movetogaminglink() throws InterruptedException {
